@@ -1,0 +1,91 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+body{
+  display: flex;
+  grid-row: 3;
+  justify-content: center;
+  /* align-items: center; */
+}
+.form-section{
+  background-color: rgb(120, 104, 136);
+  display: grid;
+  justify-content: center;
+  width: 400px;
+  margin-top: 150px;
+  padding: 20px;
+}
+
+input{
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+/* Step Indicator */
+
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  border-bottom: 3px solid #ccc;
+  color: #999;
+  font-weight: 500;
+}
+
+.step.active {
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
