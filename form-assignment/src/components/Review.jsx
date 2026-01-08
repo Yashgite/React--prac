@@ -1,51 +1,70 @@
-export default function Review({formdata}){
-    return(
-        <>
-            <div>
-                <div>
-                    <strong>Name : </strong>{formdata.fullName}
-                </div>
-                <div>
-                    <strong>Email : </strong>{formdata.email}
-                </div>
-                <div>
-                    <strong>Contact : </strong>{formdata.contact}
-                </div>
-                <div>
-                    <strong>Date of Birth : </strong>{formdata.dob}
-                </div>
-                <div>
-                    <strong>Degree : </strong>{formdata.degree}
-                </div>
-                <div>
-                    <strong>College Name : </strong>{formdata.collegeName}
-                </div>
-                <div>
-                    <strong>Degree Percentage : </strong>{formdata.degreePercentage}
-                </div>
-                <div>
-                    <strong>Gender : </strong>{formdata.gender}
-                </div>
-                <div>
-                    <strong>AddressLine1 : </strong>{formdata.addressLine1}
-                </div>
-                <div>
-                    <strong>AddressLine2 : </strong>{formdata.addressLine2}
-                </div>
-                <div>
-                    <strong>City : </strong>{formdata.city}
-                </div>
-                <div>
-                    <strong>Postal Code : </strong>{formdata.postalCode}
-                </div>
-                <div>
-                    <strong>State : </strong>{formdata.state}
-                </div>
-                <div>
-                    <strong>Country : </strong>{formdata.country}
-                </div>
+export default function Review({ formdata }) {
+  return (
+    <>
+      <div className="review-card">
+        <h3 className="review-title">Review Details</h3>
 
-            </div>
-        </>
-    )
+        <table className="review-table">
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <td>{formdata.fullName}</td>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <td>{formdata.email}</td>
+            </tr>
+            <tr>
+              <th>Contact</th>
+              <td>{formdata.contact}</td>
+            </tr>
+            <tr>
+              <th>Date of Birth</th>
+              <td>{formdata.dob}</td>
+            </tr>
+            <tr>
+              <th>Degree</th>
+              <td>{formdata.degree}</td>
+            </tr>
+            <tr>
+              <th>College Name</th>
+              <td>{formdata.collegeName}</td>
+            </tr>
+            <tr>
+              <th>Degree Percentage</th>
+              <td>{formdata.degreePercentage}</td>
+            </tr>
+            <tr>
+              <th>Gender</th>
+              <td>{formdata.gender}</td>
+            </tr>
+            <tr>
+              <th>Address Line 1</th>
+              <td>{formdata.addressLine1}</td>
+            </tr>
+            <tr>
+              <th>Address Line 2</th>
+              <td>{formdata.addressLine2}</td>
+            </tr>
+            <tr>
+              <th>City</th>
+              <td>{formdata.city}</td>
+            </tr>
+            <tr>
+              <th>Postal Code</th>
+              <td>{formdata.postalCode}</td>
+            </tr>
+            <tr>
+              <th>State</th>
+              <td>{formdata.state}</td>
+            </tr>
+            <tr>
+              <th>Country</th>
+              <td>{formdata.country}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
 }

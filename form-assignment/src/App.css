@@ -1,64 +1,73 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/* Parent CSS */
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
-body{
+/* Container */
+.form-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
   display: flex;
-  grid-row: 3;
-  justify-content: center;
-  /* align-items: center; */
-}
-.form-section{
-  background-color: rgb(120, 104, 136);
-  display: grid;
-  justify-content: center;
-  width: 400px;
-  margin-top: 150px;
-  padding: 20px;
+  flex-direction: column;
+  align-items: center;     /* center horizontally */
+  padding-top: 40px;
 }
 
-input{
+/* Form */
+.main-form {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Actions */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
   border: none;
-  padding: 5px;
-  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Button Variants */
+.btn.primary {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background-color: #dc2626;
+}
+
+.btn.secondary {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.btn.secondary:hover {
+  background-color: #d1d5db;
+}
+
+.btn.submit {
+  background-color: #16a34a;
+  color: white;
+}
+
+.btn.submit:hover {
+  background-color: #15803d;
+}
+
+/* Disable state (future use) */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 
@@ -66,22 +75,29 @@ input{
 
 .step-indicator {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .step {
-  flex: 1;
+  /* flex: 5; */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 👈 centers text properly */
   text-align: center;
-  padding: 8px;
-  border-bottom: 3px solid #ccc;
-  color: #999;
+  padding: 10px 14px;
+  border-radius: 20px;
   font-weight: 500;
+  color: #999;
+  background-color: #f2f2f2;
+  transition: all 0.3s ease;
 }
 
-.step.active {
-  border-color: #4f46e5;
-  color: #4f46e5;
+
+.active {
+  background-color: #99a5c6; /* red */
+  color: #fff;
+  font-weight: 600;
 }
 
 .error {
@@ -89,3 +105,121 @@ input{
   font-size: 12px;
   margin-top: 4px;
 }
+
+/* Personal Info */
+
+/* Form Section */
+.form-section {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+.form-section h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Inputs */
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section input[type="tel"],
+.form-section input[type="date"],
+.form-section input[type="number"] {
+  width: 90%;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-section input:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+/* Error text */
+.error {
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+/* Gender Section */
+.form-section label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  margin-right: 6px;
+}
+
+.gender-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.gender-group input[type="radio"] {
+  accent-color: #ef4444;
+  cursor: pointer;
+}
+
+/* Riview css */.review-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.review-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.review-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.review-table th,
+.review-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.review-table th {
+  width: 40%;
+  color: #374151;
+  font-weight: 600;
+  background-color: #f9fafb;
+}
+
+.review-table td {
+  color: #111827;
+  font-weight: 500;
+}
+/* 
+.review-table tr:last-child th,
+.review-table tr:last-child td {
+  border-bottom: none;
+} */

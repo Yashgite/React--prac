@@ -93,38 +93,41 @@ export default function PersonalInfo({formdata, setFormdata, err, showErrors}){
                 )}
 
                 <label>Gender</label>
-                <br />
-                <label htmlFor="male">Male</label>
-                <input 
-                required 
-                id="male" 
-                name="gender" 
-                type="radio" 
-                value="male" 
-                checked={formdata.gender === "male"} 
-                onChange={handleChange}/>
-
-                <label htmlFor="female">Female</label>
-                <input 
-                 id="female" 
-                 name="gender" 
-                 type="radio" 
-                 value="female" 
-                 checked={formdata.gender === "female"} 
-                 onChange={handleChange}/>
-
-                <label htmlFor="other">Other</label>
-                <input 
-                required 
-                id="other" 
-                name="gender" 
-                type="radio" 
-                value="other" 
-                checked={formdata.gender === "other"}
-                onChange={handleChange}/>
                 {showErrors && err.gender && (
-                    <p className="error">{err.gender}</p>
-                )}
+                        <p className="error">{err.gender}</p>
+                    )}
+                <div className="gender-group">
+                    <label htmlFor="male">Male</label>
+                    <input 
+                    required 
+                    id="male" 
+                    name="gender" 
+                    type="radio" 
+                    value="male" 
+                    checked={formdata.gender === "male"} 
+                    onChange={handleChange}/>
+
+                    <label htmlFor="female">Female</label>
+                    <input 
+                    id="female" 
+                    name="gender" 
+                    type="radio" 
+                    value="female" 
+                    checked={formdata.gender === "female"} 
+                    onChange={handleChange}/>
+
+                    <label htmlFor="other">Other</label>
+                    <input 
+                    required 
+                    id="other" 
+                    name="gender" 
+                    type="radio" 
+                    value="other" 
+                    checked={formdata.gender === "other"}
+                    onChange={handleChange}/>
+                    
+                </div>
+                
             </div>
             
         </>
