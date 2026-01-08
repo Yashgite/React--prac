@@ -9,13 +9,12 @@ export default function ParentForm() {
   const [step, setStep] = useState(1);
 
   const [err, setErr] = useState({
-    fullName: "",
+    firstName: "",
+    lastName:"",
     email: "",
     contact: "",
     dob: "",
-    degree: "",
-    collegeName: "",
-    degreePercentage: "",
+    bloodGroup: "",
     gender: "",
     addressLine1: "",
     addressLine2: "",
@@ -26,13 +25,12 @@ export default function ParentForm() {
   });
 
   const [formdata, setFormdata] = useState({
-    fullName: "",
+    firstName: "",
+    lastName:"",
     email: "",
     contact: "",
     dob: "",
-    degree: "",
-    collegeName: "",
-    degreePercentage: "",
+    bloodGroup: "",
     gender: "",
     addressLine1: "",
     addressLine2: "",
@@ -51,13 +49,12 @@ export default function ParentForm() {
     let isValid = true;
 
     const newErr = {
-      fullName: "",
+      firstName: "",
+      lastName:"",
       email: "",
       contact: "",
       dob: "",
-      degree: "",
-      collegeName: "",
-      degreePercentage: "",
+      bloodGroup: "",
       gender: "",
       addressLine1: "",
       addressLine2: "",
@@ -68,46 +65,55 @@ export default function ParentForm() {
     };
 
     // ---- PERSONAL INFO VALIDATION ----
-    if (formdata.fullName === "") {
-      newErr.fullName = "Name is required";
+    if (formdata.firstName === "") {
+      newErr.firstName = "First Name is required";
+      isValid = false;
+    }
+
+    if (formdata.lastName === "") {
+      newErr.lastName = "Last Name is required";
       isValid = false;
     }
 
     if (formdata.email === "") {
-      newErr.email = "Email is required";
-      isValid = false;
-    } else if (!formdata.email.includes("@")) {
-      newErr.email = "Email is not valid";
-      isValid = false;
+    newErr.email = "Email is required";
+    isValid = false;
+    } else {
+    const gmailRegex = /^[a-z][a-z0-9._%+-]+@gmail\.com$/;
+
+    if (!gmailRegex.test(formdata.email)) {
+        newErr.email =
+        "Please enter valid Email address (example@gmail.com)";
+        isValid = false;
     }
+    }
+
 
     if (formdata.contact === "") {
       newErr.contact = "Contact is required";
       isValid = false;
-    } else if (formdata.contact.length < 10 || formdata.contact.length > 11) {
-      newErr.contact = "Contact is not valid";
+    } else if (formdata.contact.length < 10 || formdata.contact.length > 10) {
+      newErr.contact = "Contact is Invaild";
       isValid = false;
     }
 
     if (formdata.dob === "") {
       newErr.dob = "Date of birth is required";
       isValid = false;
+    }else{
+        const Today = new Date();
+        const dobdate = new Date(formdata.dob);
+        if(Today<dobdate){
+            newErr.dob = "Date of birth cannot be in future"
+            isValid = false
+        }
     }
+    
+    // if (formdata.bloodGroup === "") {
+    // newErr.bloodGroup = "Blood group is required";
+    // isValid = false;
+    // }
 
-    if (formdata.degree === "") {
-      newErr.degree = "Degree is required";
-      isValid = false;
-    }
-
-    if (formdata.collegeName === "") {
-      newErr.collegeName = "College name is required";
-      isValid = false;
-    }
-
-    if (formdata.degreePercentage === "") {
-      newErr.degreePercentage = "Percentage is required";
-      isValid = false;
-    }
 
     if (formdata.gender === "") {
       newErr.gender = "Gender is required";
@@ -124,10 +130,23 @@ export default function ParentForm() {
       if (formdata.city === "") {
         newErr.city = "City is required";
         isValid = false;
-      }
+        } else {
+        const cityRegex = /^[a-zA-Z\s]+$/;
 
-      if (formdata.postalCode === "") {
+        if (!cityRegex.test(formdata.city)) {
+            newErr.city = "City name is invalid";
+            isValid = false;
+        }
+        }
+
+      
+
+      if (formdata.postalCode === "" ) {
         newErr.postalCode = "Postal code is required";
+        isValid = false;
+      }
+      else if(formdata.postalCode.length !== 6){
+        newErr.postalCode = "Postal code is Invalid";
         isValid = false;
       }
 
@@ -212,9 +231,21 @@ export default function ParentForm() {
             )}
 
             {step === 3 && (
-              <button type="submit" className="btn submit">
-                Submit
-              </button>
+                <>
+                   
+                    <button
+                    type="button"
+                    className="btn secondary"
+                    onClick={() => setStep(step - 1)}
+                    >
+                    Prev
+                    </button>
+
+                    <button type="submit" className="btn submit">
+                    Submit
+                    </button>
+                </>
+
             )}
           </div>
         </form>

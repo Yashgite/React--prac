@@ -7,8 +7,12 @@ export default function Review({ formdata }) {
         <table className="review-table">
           <tbody>
             <tr>
-              <th>Name</th>
-              <td>{formdata.fullName}</td>
+              <th>First Name</th>
+              <td>{formdata.firstName}</td>
+            </tr>
+             <tr>
+              <th>Last Name</th>
+              <td>{formdata.lastName}</td>
             </tr>
             <tr>
               <th>Email</th>
@@ -22,17 +26,9 @@ export default function Review({ formdata }) {
               <th>Date of Birth</th>
               <td>{formdata.dob}</td>
             </tr>
-            <tr>
-              <th>Degree</th>
-              <td>{formdata.degree}</td>
-            </tr>
-            <tr>
-              <th>College Name</th>
-              <td>{formdata.collegeName}</td>
-            </tr>
-            <tr>
-              <th>Degree Percentage</th>
-              <td>{formdata.degreePercentage}</td>
+             <tr>
+              <th>Blood Group</th>
+              <td>{formdata.bloodGroup}</td>
             </tr>
             <tr>
               <th>Gender</th>

@@ -1,135 +1,140 @@
-export default function PersonalInfo({formdata, setFormdata, err, showErrors}){
+export default function PersonalInfo({
+  formdata,
+  setFormdata,
+  err,
+  showErrors,
+}) {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-    const handleChange=(e)=>{
-        const {name, value} = e.target;
+    setFormdata((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
-        setFormdata(prev=>({
-            ...prev,
-            [name]:value
-        }));
-    }
+  return (
+    <>
+      <div className="form-section">
+        <h3>Personal Information</h3>
 
+        <label>First Name <span className="required">*</span> </label>
+        <input
+          placeholder="Enter First Name"
+          name="firstName"
+          required
+          type="text"
+          value={formdata.firstName}
+          onChange={handleChange}
+        />
+        {showErrors && err.firstName && (
+          <p className="error">{err.firstName}</p>
+        )}
 
-    return(
-        <>
-            <div className="form-section">
-                <h3>Personal Information</h3>
-                <input 
-                placeholder="Enter Fullname" 
-                name="fullName" 
-                required 
-                type="text" 
-                value={formdata.fullName} 
-                onChange={handleChange}/>
-                {showErrors && err.fullName && (
-                    <p className="error">{err.fullName}</p>
-                )}
+        <label>Last Name <span className="required">*</span> </label>
+        <input
+          placeholder="Enter Last Name"
+          name="lastName"
+          required
+          type="text"
+          value={formdata.lastName}
+          onChange={handleChange}
+        />
+        {showErrors && err.lastName &&( <p className="error">{err.lastName}</p>)}
 
-                <input 
-                placeholder="Enter Email" 
-                required 
-                name="email" 
-                type="email" 
-                value={formdata.email} 
-                onChange={handleChange}/>
-                {showErrors && err.email && (
-                    <p className="error">{err.email}</p>
-                )}
+        <label>Email <span className="required">*</span> </label>
+        <input
+          placeholder="Enter Email"
+          required
+          name="email"
+          type="email"
+          value={formdata.email}
+          onChange={handleChange}
+        />
+        {showErrors && err.email && <p className="error">{err.email}</p>}
 
-                <input 
-                placeholder="Enter Contact Number" 
-                required 
-                name="contact" 
-                type="tel" 
-                value={formdata.contact} 
-                onChange={handleChange}/>
-                {showErrors && err.contact && (
-                    <p className="error">{err.contact}</p>
-                )}
+        <label>Contact <span className="required">*</span> </label>
+        <input
+          placeholder="Enter Contact Number"
+          inputMode="numeric"
+          name="contact"
+          type="tel"
+          value={formdata.contact}
+          onChange={handleChange}
+        />
+        {showErrors && err.contact && <p className="error">{err.contact}</p>}
 
-                <input 
-                placeholder="Enter Date of Birth" 
-                required name="dob" 
-                type="date" 
-                value={formdata.dob} 
-                onChange={handleChange}/>
-                {showErrors && err.dob && (
-                    <p className="error">{err.dob}</p>
-                )}
+        <label>Date of Birth <span className="required">*</span> </label>
+        <input
+          placeholder="Enter Date of Birth"
+          required
+          name="dob"
+          type="date"
+          value={formdata.dob}
+          onChange={handleChange}
+        />
+        {showErrors && err.dob && <p className="error">{err.dob}</p>}
 
-                <input 
-                placeholder="Enter Degree" 
-                required 
-                name="degree" 
-                type="text" 
-                value={formdata.degree} 
-                onChange={handleChange}/>
-                {showErrors && err.degree && (
-                    <p className="error">{err.degree}</p>
-                )}
+        <label className="form-label">Blood Group</label>
+        <select
+          name="bloodGroup"
+          value={formdata.bloodGroup || ""}
+          onChange={handleChange}
+          required
+          className="form-select"
+        >
+          <option value="">Select Blood Group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
 
-                <input 
-                placeholder="Enter College Name" 
-                required 
-                name="collegeName" 
-                type="text" 
-                value={formdata.collegeName} 
-                onChange={handleChange}/>
-                {showErrors && err.collegeName && (
-                    <p className="error">{err.collegeName}</p>
-                )}
+        {/* {showErrors && err.bloodGroup && (
+          <p className="error">{err.bloodGroup}</p>
+        )} */}
 
-                <input 
-                placeholder="Enter Degree Percentage" 
-                required 
-                name="degreePercentage" 
-                type="number" 
-                min="0" 
-                max="100" 
-                value={formdata.degreePercentage} 
-                onChange={handleChange}/>
-                {showErrors && err.degreePercentage && (
-                    <p className="error">{err.degreePercentage}</p>
-                )}
+        <label>Gender <span className="required">*</span> </label>
+        {showErrors && err.gender && <p className="error">{err.gender}</p>}
+        <div className="gender-group">
+          <input
+            required
+            id="male"
+            name="gender"
+            type="radio"
+            value="male"
+            checked={formdata.gender === "male"}
+            onChange={handleChange}
+          />
+          <label htmlFor="male">Male</label>
 
-                <label>Gender</label>
-                {showErrors && err.gender && (
-                        <p className="error">{err.gender}</p>
-                    )}
-                <div className="gender-group">
-                    <label htmlFor="male">Male</label>
-                    <input 
-                    required 
-                    id="male" 
-                    name="gender" 
-                    type="radio" 
-                    value="male" 
-                    checked={formdata.gender === "male"} 
-                    onChange={handleChange}/>
+          <input
+            id="female"
+            name="gender"
+            type="radio"
+            value="female"
+            checked={formdata.gender === "female"}
+            onChange={handleChange}
+          />
+          <label htmlFor="female">Female</label>
 
-                    <label htmlFor="female">Female</label>
-                    <input 
-                    id="female" 
-                    name="gender" 
-                    type="radio" 
-                    value="female" 
-                    checked={formdata.gender === "female"} 
-                    onChange={handleChange}/>
+          <input
+            required
+            id="other"
+            name="gender"
+            type="radio"
+            value="other"
+            checked={formdata.gender === "other"}
+            onChange={handleChange}
+          />
+          <label htmlFor="other">Other</label>
 
-                    <label htmlFor="other">Other</label>
-                    <input 
-                    required 
-                    id="other" 
-                    name="gender" 
-                    type="radio" 
-                    value="other" 
-                    checked={formdata.gender === "other"}
-                    onChange={handleChange}/>
-                    
-                </div>
-                
-            </div>
-            
-        </>
-    )
+        </div>
+      </div>
+    </>
+  );
 }

@@ -38,12 +38,12 @@
 
 /* Button Variants */
 .btn.primary {
-  background-color: #ef4444;
+  background-color: #99a5c6;
   color: #fff;
 }
 
 .btn.primary:hover {
-  background-color: #dc2626;
+  background-color: #728bd0;
 }
 
 .btn.secondary {
@@ -83,7 +83,7 @@
   /* flex: 5; */
   display: flex;
   align-items: center;
-  justify-content: center; /* 👈 centers text properly */
+  justify-content: center; 
   text-align: center;
   padding: 10px 14px;
   border-radius: 20px;
@@ -100,11 +100,7 @@
   font-weight: 600;
 }
 
-.error {
-  color: red;
-  font-size: 12px;
-  margin-top: 4px;
-}
+
 
 /* Personal Info */
 
@@ -144,30 +140,31 @@
 }
 
 .form-section input:focus {
-  border-color: #ef4444;
+  border-color: #728bd0;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
 }
 
 /* Error text */
 .error {
-  color: #dc2626;
-  font-size: 0.8rem;
-  margin-bottom: 10px;
-  margin-left: 5px;
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
 }
 
 /* Gender Section */
 .form-section label {
+  display:block;
   font-size: 15px;
   font-weight: 500;
   color: #374151;
-  margin-right: 6px;
+  margin: 12px 0 6px;
+
 }
 
 .gender-group {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 4px;
   margin-top: 6px;
   margin-bottom: 10px;
 }
@@ -176,6 +173,13 @@
   accent-color: #ef4444;
   cursor: pointer;
 }
+
+.required {
+  color: #dc2626; /* red */
+  margin-left: 4px;
+  font-weight: 600;
+}
+
 
 /* Riview css */.review-card {
   max-width: 600px;
@@ -223,3 +227,32 @@
 .review-table tr:last-child td {
   border-bottom: none;
 } */
+
+
+/* Blood group */
+
+/* label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 12px 0 6px;
+  color: #374151;
+} */
+
+.form-select {
+  width: 96%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  margin-bottom: 6px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-select:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
