@@ -39,12 +39,7 @@ export default function ParentForm() {
     state: "",
     country: "",
   });
-
-  const handleSubmit = (e) => {
-    e.preventdefault();
-    alert("Form is submitted");
-  };
-
+  
   function validateBeforeNext() {
     let isValid = true;
 
@@ -64,7 +59,7 @@ export default function ParentForm() {
       country: "",
     };
 
-    // ---- PERSONAL INFO VALIDATION ----
+  //  PERSONAL INFO VALIDATION 
     if (formdata.firstName === "") {
       newErr.firstName = "First Name is required";
       isValid = false;
@@ -164,6 +159,13 @@ export default function ParentForm() {
     setErr(newErr);
     return isValid;
   }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Form is submitted");
+    setShowErrors(false);
+    setStep(1);
+  };
 
   function handleNext() {
     setShowErrors(true); // turn ON inline validation

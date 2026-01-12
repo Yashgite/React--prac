@@ -14,7 +14,7 @@ export default function AddressInfo({formdata, setFormdata, err, showErrors}){
         <div className="form-section">
 
             <h3>Address Details</h3>
-            <label >Address Line 1</label>
+            <label >Address Line 1 <span className="required">*</span> </label>
             <input 
             placeholder="Enter the Address Line 1" 
             name="addressLine1"
@@ -33,7 +33,7 @@ export default function AddressInfo({formdata, setFormdata, err, showErrors}){
             value={formdata.addressLine2} 
             onChange={handleChange}/>
             
-            <label >City</label>
+            <label >City <span className="required">*</span> </label>
             <input 
             placeholder="Enter the City Name" 
             name="city"
@@ -44,7 +44,7 @@ export default function AddressInfo({formdata, setFormdata, err, showErrors}){
                 <p className="error">{err.city}</p>
             )}
 
-            <label >Postal Code</label>
+            <label >Postal Code <span className="required">*</span> </label>
             <input 
             placeholder="Enter the Postal Code" 
             name="postalCode"
@@ -55,7 +55,7 @@ export default function AddressInfo({formdata, setFormdata, err, showErrors}){
                 <p className="error">{err.postalCode}</p>
             )}
 
-            <label >State</label>
+            <label >State <span className="required">*</span> </label>
             <select
             name="state"
             value={formdata.state}
@@ -72,7 +72,7 @@ export default function AddressInfo({formdata, setFormdata, err, showErrors}){
             {showErrors && err.state && <p className="error">{err.state}</p>}
 
             {/* Country Dropdown */}
-            <label >Country</label>
+            <label >Country <span className="required">*</span> </label>
             <select
             name="country"
             value={formdata.country}
