@@ -14,10 +14,8 @@ export default function ParentForm() {
     email: "",
     contact: "",
     dob: "",
-    bloodGroup: "",
     gender: "",
     addressLine1: "",
-    addressLine2: "",
     city: "",
     postalCode: "",
     state: "",
@@ -39,6 +37,8 @@ export default function ParentForm() {
     state: "",
     country: "",
   });
+
+
   
   function validateBeforeNext() {
     let isValid = true;
@@ -49,10 +49,8 @@ export default function ParentForm() {
       email: "",
       contact: "",
       dob: "",
-      bloodGroup: "",
       gender: "",
       addressLine1: "",
-      addressLine2: "",
       city: "",
       postalCode: "",
       state: "",
@@ -160,9 +158,42 @@ export default function ParentForm() {
     return isValid;
   }
 
+  const initialFormData = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    contact: "",
+    dob: "",
+    bloodGroup: "",
+    gender: "",
+    addressLine1: "",
+    addressLine2: "",
+    city: "",
+    postalCode: "",
+    state: "",
+    country: "",
+  };
+
+  const initialErr = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    contact: "",
+    dob: "",
+    gender: "",
+    addressLine1: "",
+    city: "",
+    postalCode: "",
+    state: "",
+    country: "",
+  };
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Form is submitted");
+    setFormdata(initialFormData);
+    setErr(initialErr);
     setShowErrors(false);
     setStep(1);
   };

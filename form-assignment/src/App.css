@@ -38,12 +38,12 @@
 
 /* Button Variants */
 .btn.primary {
-  background-color: #99a5c6;
+  background-color: #597de0;
   color: #fff;
 }
 
 .btn.primary:hover {
-  background-color: #728bd0;
+  background-color: #2a4eb1;
 }
 
 .btn.secondary {
@@ -95,7 +95,7 @@
 
 
 .active {
-  background-color: #99a5c6; /* red */
+  background-color: #597de0; /* red */
   color: #fff;
   font-weight: 600;
 }
