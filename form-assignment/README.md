@@ -125,7 +125,7 @@ The parent component (ParentForm) manages all shared state to ensure consistency
       setErr(initialErr);
       setShowErrors(false);
       setStep(1);
-  };
+    };
 
 On successful submission:
   - Form data is reset
@@ -139,32 +139,32 @@ Follow these steps to download the project files and run the application on your
 
 Option 1: Download ZIP (Without Git)
 
-- Click the Code button on the GitHub repository
-- Select Download ZIP
-- Extract the ZIP file to your local system
-- Open the extracted folder in VS Code
+  - Click the Code button on the GitHub repository
+  - Select Download ZIP
+  - Extract the ZIP file to your local system
+  - Open the extracted folder in VS Code
 
 Option 2: Clone the Repository (Using Git)
 
-git clone https://github.com/your-username/multi-step-form.git
-
-Navigate into the project folder:
-cd multi-step-form
+  git clone https://github.com/Yashgite/React--prac.git
+  
+  Navigate into the project folder:
+  cd React--prac.git
 
 Install Dependencies
-- Make sure Node.js is installed on your system.
-  npm install
+  - Make sure Node.js is installed on your system.
+    npm install
 
 This command installs all required packages from package.json.
 
-Run on Localhost
-- Start the development server using:
-  npm start
-or (if using Vite):
-  npm run dev
-
-Open in Browser
-- Once the server starts, open your browser and visit:
-  http://localhost:3000
-or (Vite default):
-  http://localhost:5173 
+  Run on Localhost
+  - Start the development server using:
+    npm start
+  or (if using Vite):
+    npm run dev
+  
+  Open in Browser
+  - Once the server starts, open your browser and visit:
+    http://localhost:3000
+  or (Vite default):
+    http://localhost:5173 
